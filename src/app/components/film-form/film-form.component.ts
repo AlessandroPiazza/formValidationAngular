@@ -15,7 +15,7 @@ export class FilmFormComponent implements OnInit {
     {genre: 'Comédia', name: 'Jumanji'}
   ];
   filmSelected: string;
-  filmsArray: string [] = this.films.map(filme => filme.name);
+  filmsArray: string [] = this.films.map(film => film.name);
   constructor() {
   }
 
