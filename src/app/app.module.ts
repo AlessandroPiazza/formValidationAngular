@@ -1,16 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_BOOTSTRAP_LISTENER } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { FilmFormComponent } from './components/film-form/film-form.component';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { NgxSelectModule } from 'ngx-select-ex';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FilmFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ButtonsModule,
+    BsDropdownModule.forRoot(),
+    NgxSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

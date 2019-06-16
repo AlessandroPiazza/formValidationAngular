@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-6 text-center">
+            <h1>Formulário Filme</h1>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-8">
+            <form>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Primeiro nome">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Segundo nome">
+                    </div>
+
+                </div>
+
+                <div class="row mt-5 ml-1">
+                    <label class="mx-1">Generos</label>
+                    <ngx-select class="col-lg-3"
+                      [allowClear]="true"
+                      [items]="genres"
+                      [disabled]="disabled"
+                      (select)="selected($event)"
+                      >
+                     </ngx-select>
+                     
+                </div>
+                <div class="row mt-2 ml-1">
+                        <label class="mx-1">Filmes</label>
+                        <ngx-select class="col-lg-3"
+                            [allowClear]="true"
+                            [items]="filmsArray"
+                            [disabled]="disabled"
+                            (select)="selected($event)"
+                            >
+                        </ngx-select>
+                   
+                </div>
+                <div class="row my-2">
+                    <div *ngIf="films.length && films" class="col-2">
+                        <input type="number" class="form-control" name="note" id="note" placeholder="nota">
+                    </div>
+                </div>
+                <button *ngIf="films.length && films" type="submit" class="btn btn-primary">Detalhes</button>
+            </form>
+        </div>
+    </div>
+</div>
